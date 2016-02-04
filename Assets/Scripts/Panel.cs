@@ -29,7 +29,7 @@ public class Panel : MonoBehaviour {
 		timeText = gameObject.GetComponentsInChildren<Text>()[0];
 		scoreText = gameObject.GetComponentsInChildren<Text>()[1];
 		totalScore = 0;
-		scoreText.text = "SCORE: 0";
+		scoreText.text = "score 0";
 	}
 
 	void Update () 
@@ -48,7 +48,7 @@ public class Panel : MonoBehaviour {
 			lineRenderer.SetVertexCount(randGesture.Points.Length);
 			for (int i = 0; i < randGesture.Points.Length; i++)
 			{
-				lineRenderer.SetPosition(i, new Vector3(randGesture.Points[i].X + 2f, -randGesture.Points[i].Y, -7f));
+				lineRenderer.SetPosition(i, new Vector3(randGesture.Points[i].X - 2f, -randGesture.Points[i].Y, -7f));
 			}
 			newFigure = false;
 		}
@@ -74,7 +74,7 @@ public class Panel : MonoBehaviour {
 			timer = startTimer;
 			splashNFade.SetSplash(true);
 			totalScore++;
-			scoreText.text = "SCORE: " + totalScore;
+			scoreText.text = "score " + totalScore;
 		}
 		else
 		{
