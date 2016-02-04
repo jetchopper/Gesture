@@ -6,7 +6,7 @@ public class EndWindow : MonoBehaviour {
 
 	public void SetScore(int score) 
 	{
-		GetComponentInChildren<Text>().text = "TOTAL SCORE: " + score;
+		GetComponentInChildren<Text>().text = "TOTAL SCORE\n" + score;
 	}
 
 	public void TryAgain()

@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 public class SplashNFade : MonoBehaviour {
 
+	public AudioSource passed, error;
+
 	private Image image;
-	private bool correct, doneDrawing;
+	private bool doneDrawing;
 
 	void Awake () 
 	{
@@ -22,11 +24,20 @@ public class SplashNFade : MonoBehaviour {
 		}
 	}
 
-	public void SetSplash(bool b)
+	public void SetSplash(bool correct)
 	{
-		correct = b;
+		//guessed or not check
+		if (correct)
+		{
+			image.color = Color.green;
+			passed.Play();
+		}
+		else
+		{
+			image.color = Color.red;
+			error.Play();
+		}
 		doneDrawing = true;
-		image.color = correct ? Color.green : Color.red;
 		image.enabled = true;
 	}
 }

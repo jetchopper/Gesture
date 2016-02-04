@@ -48,7 +48,7 @@ public class Panel : MonoBehaviour {
 			lineRenderer.SetVertexCount(randGesture.Points.Length);
 			for (int i = 0; i < randGesture.Points.Length; i++)
 			{
-				lineRenderer.SetPosition(i, new Vector3(randGesture.Points[i].X - 2f, -randGesture.Points[i].Y, -7f));
+				lineRenderer.SetPosition(i, new Vector3(randGesture.Points[i].X - 2.2f, -randGesture.Points[i].Y, -6.8f));
 			}
 			newFigure = false;
 		}
@@ -57,6 +57,7 @@ public class Panel : MonoBehaviour {
 			timeText.text = "";
 			scoreText.text = "";
 			gestureRecognizer.StopGame();
+			lineRenderer.SetVertexCount(0);
 			end.SetActive(true);
 			end.GetComponent<EndWindow>().SetScore(totalScore);
 		}
